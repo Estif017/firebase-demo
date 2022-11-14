@@ -15,7 +15,11 @@ const Navbar = () => {
 			<div className='links'>
 				<Link to='/'>HomePage</Link>
 				&emsp;
-				<Link to='/login'>Login</Link>
+				{!user ? (
+					<Link to='/login'>Login</Link>
+				) : (
+					<Link to='/create-post'>Create Post</Link>
+				)}
 			</div>
 			{user && (
 				<div className='user'>
